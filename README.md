@@ -17,6 +17,23 @@ Features currently not supported:
 + Skin effect calculation for internal self impedance
 + Input data validation, e.g. check that all phase conductor vectors are the same size
 
+Validation
+----------
+
+Output of line constants library example (simply run line_constants.py in the command line):
+
+![screenshot of example output](/docs/py_output.png?raw=true)
+
+Corresponding line constants calculation in DIgSILENT PowerFactory 2017:
+
+![screenshot of tower geometry in PowerFactory](/docs/PF_geometry.png?raw=true)
+
+Impedance matrix:
+![screenshot of PowerFactory impedance matrix](/docs/PF_impedance.png?raw=true)
+
+Admittance matrix:
+![screenshot of PowerFactory admittance matrix](/docs/PF_admittance.png?raw=true)
+
 References
 ----------
 + Dommel, H. W., "Electromagnetic Transients Program Reference Manual (EMTP Theory Book)", Chapter 4, "Overhead Transmission Lines"
