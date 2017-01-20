@@ -471,11 +471,11 @@ if __name__ == '__main__':
     }
 
     # Impedance matrix
-    Zp, np, ne = calc_Z_matrix(line_dict)
-    Z = calc_kron_Z(Zp,ne)
+    Zp, n_p, n_e = calc_Z_matrix(line_dict)
+    Z = calc_kron_Z(Zp,n_e)
     print(Z)
     
     # Admittance matrix
-    Yp, np, ne = calc_Y_matrix(line_dict)
-    Y = calc_kron_Z(Yp,ne)
+    Yp, n_p, n_e = calc_Y_matrix(line_dict)
+    Y = calc_kron_Z(Yp,n_e)
     print(Y)
