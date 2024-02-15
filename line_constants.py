@@ -217,7 +217,7 @@ def calc_self_Z(R_int, cond_type, r, q, h_i, f, rho, err_tol=1e-6):
     # Calculate Carson's correction factors (in Ohm/km)
     Rp, Xp = carsons('self', h_i, 0, 0, f, rho, err_tol)
     
-    self_Z = np.complex(R_int + Rp, X_int + X_geo + Xp)
+    self_Z = complex(R_int + Rp, X_int + X_geo + Xp)
     
     return self_Z
 
@@ -253,7 +253,7 @@ def calc_mutual_Z(cond_type, r, q, h_i, h_k, x_ik, f, rho, err_tol=1e-6):
     # Calculate Carson's correction factors (in Ohm/km)
     Rp, Xp = carsons('mutual', h_i, h_k, x_ik, f, rho, err_tol)
     
-    self_Z = np.complex(Rp, X_geo + Xp)
+    self_Z = complex(Rp, X_geo + Xp)
     
     return self_Z
 
@@ -290,14 +290,14 @@ def calc_Dubanton_Z(type, R_int, cond_type, r, q, h_i, h_k, x_ik, f, rho):
         # Calculate geometrical reactance (in Ohm/km)
         X_geo = 1000 * omega * mu_0 / 2 / np.pi * np.log(2000 * (h_i + p) / r)
         
-        Dubanton_Z = np.complex(R_int, X_int + X_geo)
+        Dubanton_Z = complex(R_int, X_int + X_geo)
         
     else:
         # Mutual impedance
         d = np.sqrt((h_i - h_k)**2 + x_ik ** 2)     # Distance between conductors i and k
         X_geo = 1000 * omega * mu_0 / 2 / np.pi * np.log(np.sqrt((h_i + h_k + 2 * p)**2 + x_ik ** 2) / d)
         
-        Dubanton_Z = np.complex(0, X_geo)
+        Dubanton_Z = complex(0, X_geo)
     
     return Dubanton_Z
     
