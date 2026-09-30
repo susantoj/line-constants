@@ -355,7 +355,7 @@ def calc_Z_matrix(line_dict):
     n_c = n_p + n_e
         
     # Set up primitive Z matrix
-    Z = np.mat(np.zeros((n_c, n_c)), dtype='complex')
+    Z = np.asmatrix(np.zeros((n_c, n_c)), dtype='complex')
     for i in range(n_c):
         for j in range(n_c):
             if i == j:
@@ -407,7 +407,7 @@ def calc_Y_matrix(line_dict):
     e_0 = 8.85418782 * 1e-12                    # Permittivity of free space
     
     # Set up primitive Y matrix
-    Y = np.mat(np.zeros((n_c, n_c)), dtype='complex')
+    Y = np.asmatrix(np.zeros((n_c, n_c)), dtype='complex')
     # Build up potential coefficients
     for i in range(n_c):
         for j in range(n_c):
